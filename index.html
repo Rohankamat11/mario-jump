@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var div = $(".mario");
+                div.animate({ top: "80px" }, "fast");
+                div.animate({ top: "-3px" }, "fast");
+                div.animate({ top: "-1px" }, "fast");
+                div.animate({ top: "80px" }, "fast");
+
+            });
+        });
+        var mainimg = document.querySelector('#img1');
+        var obsimg = document.querySelector('#img2');
+        var msrc = getPosition(mainimg);
+        var osrc = getPosition(obsimg);
+        if(msrc === osrc){
+            alert("Game Over!! Wanna play again")
+            location.reload();
+        }
+        
+
+    </script>
+    <title>Mario Jump</title>
+</head>
+<style>
+    .obs {
+        width: 65px;
+        height: 58px;
+        background: transparent;
+        position: relative;
+        margin-top: 40px;
+        line-height: 10px;
+    }
+
+    marquee {
+        margin-top: 56px;
+    }
+
+    .jump {
+        background-color: rgb(245, 53, 53);
+        color: white;
+        border-radius: 50%;
+        height: 67px;
+        width: 72px;
+        font-size: 17px;
+        border: none;
+        outline: none;
+        font-family: cursive;
+
+    }
+
+    .jump:hover {
+        background-color: rgb(51, 240, 34);
+    }
+
+
+    .mario {
+        margin-top: 57px;
+        position: absolute;
+
+    }
+
+    hr {
+        margin-top: -8px;
+    }
+</style>
+
+<body>
+    <center>
+        <h1>Mario Jump</h1>
+    </center>
+
+    <img class="mario" id="img1" src="QGo5isT.gif" alt="mario" width="25%" height="15%">
+    <marquee direction="left" scrollamount=20 width="100%">
+        <img class="obs" id="img2" src="images-removebg-preview.png" alt="">
+    </marquee>
+    <hr>
+    <center>
+        <button class="jump">Jump</button>
+    </center>
+</body>
+
+</html>
