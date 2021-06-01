@@ -34,8 +34,8 @@ if(y>0&&y<95 && Math.ceil(document.querySelector("#img1").getBoundingClientRect(
 {console.log(document.getElementsByTagName("Marquee")[0].stop());
 game_over = 0; 
 document.getElementById("game").style.width="100px";
- 
-
+alert("Play Again");
+location.reload();
  clearInterval(T);  
 }
      })
