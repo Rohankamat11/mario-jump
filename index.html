@@ -33,7 +33,9 @@ var y= z.getBoundingClientRect().right
 if(y>0&&y<95 && Math.ceil(document.querySelector("#img1").getBoundingClientRect().top)==137)
 {console.log(document.getElementsByTagName("Marquee")[0].stop());
 game_over = 0; 
-document.getElementById("game").style.width="100px"
+document.getElementById("game").style.width="100px";
+ alert("Wanna Play Again ??");
+ location.reload();
  clearInterval(T);  
 }
      })
