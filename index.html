@@ -10,18 +10,39 @@
 
         function countTouches(event) {
             var x = event.touches.length;
+           var t=0;
+           var game_over = 100;
             if (x === 1) {
                 
                         var div = $(".mario");
                         div.animate({ top: "80px" }, "fast");
-                        div.animate({ top: "-3px" }, "fast");
+                        div.animate({ top: "-3px" }, "slow");
                         div.animate({ top: "-1px" }, "fast");
                         div.animate({ top: "80px" }, "fast");
 
-                 
+                        console.log(document.querySelector("#img2").getBoundingClientRect().right)
                
             }
         }
+
+T = setInterval( function check(b){
+    var u = document.querySelector("#img1").getBoundingClientRect().top;
+    document.querySelectorAll("#img2").forEach((z)=>{
+var y= z.getBoundingClientRect().right
+
+if(y>0&&y<155 && Math.ceil(document.querySelector("#img1").getBoundingClientRect().top)==137)
+{console.log(document.getElementsByTagName("Marquee")[0].stop());
+game_over = 0; 
+document.getElementById("game").style.width="100px"
+ clearInterval(T);  
+}
+     })
+//     if(x>0&&x<195)
+// console.log("yess")
+// else console.log("no");
+
+},10);
+   
 
     </script>
     <title>Mario Jump</title>
@@ -33,11 +54,12 @@
     }
     .obs {
         width: 65px;
+        padding: -30px;
         height: 58px;
-        background: transparent;
+        background : transparent;
         position: relative;
         margin-top: 40px;
-        margin-left: 200px;
+        margin-left: 400px;
 
     }
 
@@ -66,12 +88,20 @@
     .mario {
         margin-top: 57px;
         position: absolute;
-
+        width: 40px;
+        background-color:;
     }
 
     hr {
         margin-top: -8px;
     }
+    .game{
+width :0px;
+overflow: hidden;
+background-color:white;
+
+    }
+.game-over.acive{width:0px;}
 </style>
 
 <body ontouchstart="countTouches(event)" ontouchend="countTouches(event)">
@@ -95,7 +125,7 @@
 
     </marquee>
     <hr>
-   
+ <center>   <div class="game"  id = "game">Game Over</div></center>
 </body>
 
 </html>
